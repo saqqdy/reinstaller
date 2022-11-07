@@ -25,7 +25,6 @@
     },
     "scripts": {
         "build": "rimraf lib es && rollup -c",
-        "build:umd": "webpack --config webpack.config.js",
         "build:types": "run-s build-temp-types roll-types",
         "build-temp-types": "tsc --emitDeclarationOnly --outDir temp/ -p src/",
         "patch-types": "node script/patchTypes",
@@ -34,7 +33,7 @@
         "pub": "tscjs scripts/publish",
         "unpub": "tscjs scripts/unpublish",
         "sync": "tscjs scripts/sync",
-        "dist": "run-s eslint prettier build build:umd build:types docs prettier:docs",
+        "dist": "run-s eslint prettier build build:types docs prettier:docs",
         "test-unit": "jest --filter ./scripts/filter-unit.js",
         "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
         "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",

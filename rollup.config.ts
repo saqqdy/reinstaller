@@ -49,12 +49,7 @@ export default [
                         target: 'es6'
                     },
                     include: ['src/**/*.ts'],
-                    exclude: [
-                        'node_modules',
-                        '__tests__',
-                        'core-js',
-                        'js-cool'
-                    ]
+                    exclude: ['node_modules', '__tests__', 'core-js', 'js-cool']
                 },
                 abortOnError: false
             }),
@@ -66,7 +61,7 @@ export default [
             }),
             visualizer()
         ],
-        external(id) {
+        external(id: string) {
             return [
                 'core-js',
                 // 'js-cool',
