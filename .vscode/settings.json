@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
         "Codacy",
+        "consola",
         "esbuild",
         "instanceof",
         "lcov",
+        "picocolors",
         "pnpm",
         "reinstaller",
         "Retryable",
@@ -13,5 +15,6 @@
         "typedoc",
         "unpub",
         "unpublish"
-    ]
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

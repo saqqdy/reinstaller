@@ -17,8 +17,13 @@
         "esModuleInterop": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "rootDir": ".",
+        "outDir": "lib",
+        "baseUrl": ".",
+        "paths": {
+            "#lib/*": ["./src/*"]
+        }
     },
-    "include": ["**/*.ts"],
-    "exclude": ["node_modules/**", "**/__tests__", "temp"]
+    "exclude": ["**/__tests__", "temp"]
 }

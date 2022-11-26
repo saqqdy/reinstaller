@@ -34,17 +34,7 @@ exports.bannerText =
 exports.externals = externals
 exports.version = pkg.version
 
-exports.extensions = [
-    '.js',
-    '.jsx',
-    '.ts',
-    '.tsx',
-    '.es6',
-    '.es',
-    '.mjs',
-    '.ts',
-    '.json'
-]
+exports.extensions = ['.js', '.jsx', '.ts', '.tsx', '.es6', '.es', '.mjs', '.ts', '.json']
 
 exports.alias = {
     '@': path.resolve(__dirname, '../src'),
