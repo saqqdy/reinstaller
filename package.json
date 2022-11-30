@@ -57,7 +57,7 @@
         "commander": "^9.4.1",
         "consola": "^2.15.3",
         "core-js": "^3.26.1",
-        "fs-extra": "^10.1.0",
+        "fs-extra": "^11.1.0",
         "js-cool": "^2.5.0",
         "lodash-es": "^4.17.21",
         "lodash-unified": "^1.0.3",
