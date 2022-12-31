@@ -30,7 +30,6 @@ $ yarn add reinstaller
 
 ## 使用
 
-
 ## 问题和支持
 
 Please open an issue [here](https://github.com/saqqdy/reinstaller/issues).

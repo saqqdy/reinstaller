@@ -1,20 +1,28 @@
 {
-    "cSpell.words": [
-        "Codacy",
-        "consola",
-        "esbuild",
-        "instanceof",
-        "lcov",
-        "picocolors",
-        "pnpm",
-        "reinstaller",
-        "Retryable",
-        "saqqdy",
-        "tscjs",
-        "tsnd",
-        "typedoc",
-        "unpub",
-        "unpublish"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib"
+	"cSpell.words": [
+		"Codacy",
+		"consola",
+		"convertable",
+		"demi",
+		"esbuild",
+		"filesize",
+		"hooks-demi",
+		"iife",
+		"instanceof",
+		"jsdelivr",
+		"lcov",
+		"picocolors",
+		"pnpm",
+		"reinstaller",
+		"Retryable",
+		"saqqdy",
+		"tscjs",
+		"tsnd",
+		"typedoc",
+		"Uninteractive",
+		"unpub",
+		"unpublish",
+		"weixin"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
