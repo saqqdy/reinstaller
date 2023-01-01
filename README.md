@@ -43,10 +43,11 @@ reinstaller webapp/app
 
 ## Configuration
 
+Use `.reinstallerrc` file
+
 ### `packageTags`: Specify the tags to be installed
 
 ```json
-// .reinstallerrc
 {
     "packageTags": {
         "vue": "next",
@@ -58,7 +59,6 @@ reinstaller webapp/app
 ### `exclude`: Exclude packages that you don't want to install
 
 ```json
-// .reinstallerrc
 {
     "exclude": ["tsnd"]
 }
@@ -67,7 +67,6 @@ reinstaller webapp/app
 ### `registry`: Set registry
 
 ```json
-// .reinstallerrc
 {
     "registry": "https://registry.npmmirror.com"
 }
