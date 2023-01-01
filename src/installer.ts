@@ -1,10 +1,15 @@
 #!/usr/bin/env ts-node
 
 import { createRequire } from 'node:module'
+import { spawnSync } from 'node:child_process'
+import { join } from 'node:path'
 import { program } from 'commander'
 import sh from 'shelljs'
 import chalk from 'chalk'
-import depcheck from 'depcheck'
+// import depcheck from 'depcheck'
+import preferredPM from 'preferred-pm'
+import getGitRevParse from '@gitmars/core/lib/git/getGitRevParse'
+import config from './utils/config'
 // import { version } from '../package.json' assert { type: 'json' }
 import lang from '#lib/utils/lang'
 
@@ -33,33 +38,6 @@ program.version(
 	t('View reinstaller version number')
 )
 
-// Check for outdated, incorrect, and unused dependencies.
-
-// Usage
-//   $ npm-check <path> <options>
-
-// Path
-//   Where to check. Defaults to current directory. Use -g for checking global modules.
-
-// Options
-//   -u, --update          Interactive update.
-//   -y, --update-all      Uninteractive update. Apply all updates without prompting.
-//   -g, --global          Look at global modules.
-//   -s, --skip-unused     Skip check for unused packages.
-//   -p, --production      Skip devDependencies.
-//   -d, --dev-only        Look at devDependencies only (skip dependencies).
-//   -i, --ignore          Ignore dependencies based on succeeding glob.
-//   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
-//   --specials            List of depcheck specials to include in check for unused dependencies.
-//   --no-color            Force or disable color output.
-//   --no-emoji            Remove emoji support. No emoji in default in CI environments.
-//   --debug               Debug output. Throw in a gist when creating issues on github.
-
-// Examples
-//   $ npm-check           # See what can be updated, what isn't being used.
-//   $ npm-check ../foo    # Check another path.
-//   $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
-
 program
 	.name('reinstaller')
 	.usage('[path] [options]')
@@ -68,91 +46,138 @@ program
 		'[path]',
 		'Where to check. Defaults to current directory. Use -g for checking global modules.'
 	)
-	.option('-u, --update', t('Interactive update.'))
-	.option('-y, --update-all', t('Uninteractive update. Apply all updates without prompting.'))
-	.option('-g, --global', t('Look at global modules.'))
-	.option('-s, --skip-unused', t('Skip check for unused packages.'))
-	.option('-p, --production', t('Skip devDependencies.'))
-	.option('-d, --dev-only ', t('Look at devDependencies only (skip dependencies).'))
-	.option('-i, --ignore', t('Ignore dependencies based on succeeding glob.'))
-	.option(
-		'-E, --save-exact',
-		t('Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.')
-	)
-	.option(
-		'--specials',
-		t('List of depcheck specials to include in check for unused dependencies.')
-	)
-	.option('--no-color', t('Force or disable color output.'))
-	.option('--no-emoji', t('Remove emoji support. No emoji in default in CI environments.'))
-	.option('--debug', t('Debug output. Throw in a gist when creating issues on github.'))
-	.action((path, options) => {
-		console.log(path, options)
+	// .option('-u, --update', t('Interactive update.'))
+	// .option('-y, --update-all', t('Uninteractive update. Apply all updates without prompting.'))
+	// .option('-g, --global', t('Look at global modules.'))
+	// .option('-s, --skip-unused', t('Skip check for unused packages.'))
+	// .option('-p, --production', t('Skip devDependencies.'))
+	// .option('-d, --dev-only ', t('Look at devDependencies only (skip dependencies).'))
+	// .option('-i, --ignore', t('Ignore dependencies based on succeeding glob.'))
+	// .option(
+	// 	'-E, --save-exact',
+	// 	t('Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.')
+	// )
+	// .option(
+	// 	'--specials',
+	// 	t('List of depcheck specials to include in check for unused dependencies.')
+	// )
+	// .option('--no-color', t('Force or disable color output.'))
+	// .option('--no-emoji', t('Remove emoji support. No emoji in default in CI environments.'))
+	// .option('--debug', t('Debug output. Throw in a gist when creating issues on github.'))
+	.action(async (path, options) => {
+		const { root } = getGitRevParse()
+		const customConfig = config('reinstaller')
+		const pkg = require(join(root, 'package.json'))
+		const { name: pm } = (await preferredPM(root)) || { name: 'npm' }
+		let argv = ['--registry', 'https://registry.npmmirror.com']
 
-		const _options = {
-			ignoreBinPackage: false, // ignore the packages with bin entry
-			skipMissing: false, // skip calculation of missing dependencies
-			parsers: {
-				// the target parsers
-				'**/*.js': depcheck.parser.es6,
-				'**/*.jsx': depcheck.parser.jsx
-			},
-			// detectors: [
-			// 	// the target detectors
-			// 	depcheck.detector.requireCallExpression,
-			// 	depcheck.detector.importDeclaration
-			// ],
-			// specials: [
-			// 	// the target special parsers
-			// 	depcheck.special.eslint,
-			// 	depcheck.special.webpack
-			// ],
-			// package: {
-			// 	// may specify dependencies instead of parsing package.json
-			// 	dependencies: {
-			// 		lodash: '^4.17.15'
-			// 	},
-			// 	devDependencies: {
-			// 		eslint: '^6.6.0'
-			// 	},
-			// 	peerDependencies: {},
-			// 	optionalDependencies: {}
-			// },
-			// files matching these patterns will be ignored
-			// ignorePatterns: ['sandbox', 'dist', 'bower_components'],
-			ignoreDirs: [
-				'sandbox',
-				'dist',
-				'generated',
-				'.generated',
-				'build',
-				'fixtures',
-				'jspm_packages'
-			],
-			ignoreMatches: [
-				'gulp-*',
-				'grunt-*',
-				'karma-*',
-				'angular-*',
-				'babel-*',
-				'metalsmith-*',
-				'eslint-plugin-*',
-				'@types/*',
-				'grunt',
-				'mocha',
-				'ava'
-			]
-			// specials: getSpecialParsers(currentState)
+		switch (pm) {
+			case 'yarn':
+				argv = argv.concat(['add'])
+				break
+			default:
+				argv = argv.concat(['i'])
+				break
 		}
 
-		depcheck('/Users/saqqdy/www/saqqdy/reinstaller', _options).then(unused => {
-			console.log(unused.dependencies) // an array containing the unused dependencies
-			console.log(unused.devDependencies) // an array containing the unused devDependencies
-			console.log(unused.missing) // a lookup containing the dependencies missing in `package.json` and where they are used
-			console.log(unused.using) // a lookup indicating each dependency is used by which files
-			console.log(unused.invalidFiles) // files that cannot access or parse
-			console.log(unused.invalidDirs) // directories that cannot access
-		})
+		const pkgList = genInstallName(pkg.dependencies)
+		const devPkgList = genInstallName(pkg.devDependencies)
+
+		// run install
+		if (pkgList.length > 0 || devPkgList.length > 0) {
+			pkgList.length &&
+				spawnSync(pm, argv.concat(pkgList), {
+					stdio: 'inherit'
+				})
+			devPkgList.length &&
+				spawnSync(pm, argv.concat(devPkgList).concat(['-D']), {
+					stdio: 'inherit'
+				})
+		} else {
+			process.exit(1)
+		}
+
+		function genInstallName(dependencies: Record<string, string>) {
+			const pkgList: string[] = []
+			for (let packageName in dependencies) {
+				const isWorkspacePkg = dependencies[packageName] === 'workspace:*'
+				const isCustomize = /^npm:/.test(dependencies[packageName])
+				const isExcludePkg = customConfig.exclude.includes(packageName)
+				if (isCustomize) packageName += `@${dependencies[packageName]}`
+				else if (packageName in customConfig.packageTags)
+					packageName += `@${customConfig.packageTags[packageName]}`
+				else packageName += '@latest'
+				if (!isWorkspacePkg && !isExcludePkg) {
+					pkgList.push(packageName)
+				}
+			}
+			return pkgList
+		}
+
+		// const _options = {
+		// 	ignoreBinPackage: false, // ignore the packages with bin entry
+		// 	skipMissing: false, // skip calculation of missing dependencies
+		// 	parsers: {
+		// 		// the target parsers
+		// 		'**/*.js': depcheck.parser.es6,
+		// 		'**/*.jsx': depcheck.parser.jsx
+		// 	},
+		// 	// detectors: [
+		// 	// 	// the target detectors
+		// 	// 	depcheck.detector.requireCallExpression,
+		// 	// 	depcheck.detector.importDeclaration
+		// 	// ],
+		// 	// specials: [
+		// 	// 	// the target special parsers
+		// 	// 	depcheck.special.eslint,
+		// 	// 	depcheck.special.webpack
+		// 	// ],
+		// 	// package: {
+		// 	// 	// may specify dependencies instead of parsing package.json
+		// 	// 	dependencies: {
+		// 	// 		lodash: '^4.17.15'
+		// 	// 	},
+		// 	// 	devDependencies: {
+		// 	// 		eslint: '^6.6.0'
+		// 	// 	},
+		// 	// 	peerDependencies: {},
+		// 	// 	optionalDependencies: {}
+		// 	// },
+		// 	// files matching these patterns will be ignored
+		// 	// ignorePatterns: ['sandbox', 'dist', 'bower_components'],
+		// 	ignoreDirs: [
+		// 		'sandbox',
+		// 		'dist',
+		// 		'generated',
+		// 		'.generated',
+		// 		'build',
+		// 		'fixtures',
+		// 		'jspm_packages'
+		// 	],
+		// 	ignoreMatches: [
+		// 		'gulp-*',
+		// 		'grunt-*',
+		// 		'karma-*',
+		// 		'angular-*',
+		// 		'babel-*',
+		// 		'metalsmith-*',
+		// 		'eslint-plugin-*',
+		// 		'@types/*',
+		// 		'grunt',
+		// 		'mocha',
+		// 		'ava'
+		// 	]
+		// 	// specials: getSpecialParsers(currentState)
+		// }
+
+		// depcheck('/Users/saqqdy/www/saqqdy/reinstaller', _options).then(unused => {
+		// 	// console.log(unused.dependencies) // an array containing the unused dependencies
+		// 	// console.log(unused.devDependencies) // an array containing the unused devDependencies
+		// 	console.log(unused.missing) // a lookup containing the dependencies missing in `package.json` and where they are used
+		// 	// console.log(unused.using) // a lookup indicating each dependency is used by which files
+		// 	// console.log(unused.invalidFiles) // files that cannot access or parse
+		// 	// console.log(unused.invalidDirs) // directories that cannot access
+		// })
 	})
 
 // 自定义帮助

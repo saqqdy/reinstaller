@@ -1,0 +1,16 @@
+{
+	"id": 0,
+	"name": "index.md - v1.0.0",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "index.md",
+	"sources": [
+		{
+			"fileName": "installer.ts",
+			"line": 3,
+			"character": 0,
+			"url": "https://github.com/saqqdy/reinstaller/blob/c12cf50/src/installer.ts#L3"
+		}
+	]
+}

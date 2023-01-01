@@ -1,6 +1,6 @@
 module.exports = {
 	out: 'docs',
-	entryPoints: ['src/index.ts'],
+	entryPoints: ['src/installer.ts'],
 	json: 'docs/out.json',
 	name: 'index.md',
 	includeVersion: true,
