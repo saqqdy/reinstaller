@@ -18,6 +18,10 @@ const require = createRequire(import.meta.url)
 const { yellow } = chalk
 const { version } = require('../package.json')
 
+export interface ReinstallerOption {
+	update?: boolean
+}
+
 if (!sh.which('npm') || !sh.which('yarn') || !sh.which('pnpm')) {
 	console.info(
 		t(
@@ -64,12 +68,13 @@ program
 	// .option('--no-color', t('Force or disable color output.'))
 	// .option('--no-emoji', t('Remove emoji support. No emoji in default in CI environments.'))
 	// .option('--debug', t('Debug output. Throw in a gist when creating issues on github.'))
-	.action(async (path, options) => {
+	.action(async (path?: string, options?: ReinstallerOption) => {
 		const { root } = getGitRevParse()
+		if (!path) path = root
 		const customConfig = config('reinstaller')
-		const pkg = require(join(root, 'package.json'))
-		const { name: pm } = (await preferredPM(root)) || { name: 'npm' }
-		let argv = ['--registry', 'https://registry.npmmirror.com']
+		const pkg = require(join(path, 'package.json'))
+		const { name: pm } = (await preferredPM(path)) || { name: 'npm' }
+		let argv = ['--registry', customConfig.registry ?? 'https://registry.npmmirror.com']
 
 		switch (pm) {
 			case 'yarn':

@@ -1,4 +1,4 @@
-index.md - v1.0.0 / [Exports](modules.md)
+index.md - v1.1.0 / [Exports](modules.md)
 
 <div style="text-align: center;" align="center">
 
@@ -18,16 +18,16 @@ A simple installing tool
 
 </div>
 
-## **完整文档请查阅： [API 完整文档](./docs/modules.md)**
+## **Full API docs： [API Docs](./docs/modules.md)**
 
-## 安装
+## Installing
 
 ```bash
-# 使用npm
-$ npm install reinstaller --save
+# use npm
+$ npm install -g reinstaller
 
-# 使用yarn
-$ yarn add reinstaller
+# use yarn
+$ yarn add -g reinstaller
 ```
 
 ## 使用

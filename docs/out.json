@@ -1,16 +1,72 @@
 {
 	"id": 0,
-	"name": "index.md - v1.0.0",
+	"name": "index.md - v1.1.0",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "index.md",
+	"children": [
+		{
+			"id": 1,
+			"name": "ReinstallerOption",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "update",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "installer.ts",
+							"line": 22,
+							"character": 1,
+							"url": "https://github.com/saqqdy/reinstaller/blob/95481fb/src/installer.ts#L22"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "installer.ts",
+					"line": 21,
+					"character": 17,
+					"url": "https://github.com/saqqdy/reinstaller/blob/95481fb/src/installer.ts#L21"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				1
+			]
+		}
+	],
 	"sources": [
 		{
 			"fileName": "installer.ts",
 			"line": 3,
 			"character": 0,
-			"url": "https://github.com/saqqdy/reinstaller/blob/c12cf50/src/installer.ts#L3"
+			"url": "https://github.com/saqqdy/reinstaller/blob/95481fb/src/installer.ts#L3"
 		}
 	]
 }

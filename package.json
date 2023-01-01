@@ -1,7 +1,7 @@
 {
 	"name": "reinstaller",
 	"description": "A installing tool",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"packageManager": "pnpm@7.18.0",
 	"bin": {
 		"reinstaller": "./bin/index.js",

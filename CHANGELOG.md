@@ -1,6 +1,11 @@
-# 更新日志
+# Change logs
 
-## 2023.01.01 v1.0.0 更新日志
+## 2023.01.01 v1.1.0
 
-1. 创建项目
-2. 使用`reinstall .`
+1. support check subpath
+2. fix bugs
+
+## 2023.01.01 v1.0.0
+
+1. create project
+2. usage: `reinstall .`
