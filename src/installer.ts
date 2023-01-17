@@ -4,9 +4,8 @@ import { createRequire } from 'node:module'
 import { spawnSync } from 'node:child_process'
 import { join } from 'node:path'
 import { program } from 'commander'
-import sh from 'shelljs'
 import chalk from 'chalk'
-// import depcheck from 'depcheck'
+import { monorepoRootSync } from 'monorepo-root'
 import preferredPM from 'preferred-pm'
 import getGitRevParse from '@gitmars/core/lib/git/getGitRevParse'
 import config from './utils/config'
@@ -22,14 +21,6 @@ export interface ReinstallerOption {
 	update?: boolean
 }
 
-if (!sh.which('npm') || !sh.which('yarn') || !sh.which('pnpm')) {
-	console.info(
-		t(
-			'Reinstaller can only be executed in a node environment, so please install npm/yarn/pnpm first'
-		)
-	)
-	process.exit(1)
-}
 program.version(
 	'	\n' +
 		'             _          __       ____       \n' +
@@ -72,8 +63,10 @@ program
 		const { root } = getGitRevParse()
 		if (!path) path = root
 		const customConfig = config('reinstaller')
+		const monorepoRoot = monorepoRootSync()
 		const pkg = require(join(path, 'package.json'))
 		const { name: pm } = (await preferredPM(path)) || { name: 'npm' }
+		const isRoot = monorepoRoot === process.cwd()
 		let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
 
 		switch (pm) {
@@ -83,6 +76,10 @@ program
 			default:
 				argv = argv.concat(['i'])
 				break
+		}
+		// running in package root, use '-w'
+		if (monorepoRoot && isRoot) {
+			argv.push('-w')
 		}
 
 		const pkgList = genInstallName(pkg.dependencies)
@@ -107,9 +104,9 @@ program
 			for (let packageName in dependencies) {
 				const isWorkspacePkg = dependencies[packageName] === 'workspace:*'
 				const isCustomize = /^npm:/.test(dependencies[packageName])
-				const isExcludePkg = customConfig.exclude.includes(packageName)
+				const isExcludePkg = customConfig.exclude?.includes(packageName)
 				if (isCustomize) packageName += `@${dependencies[packageName]}`
-				else if (packageName in customConfig.packageTags)
+				else if (packageName in (customConfig.packageTags || {}))
 					packageName += `@${customConfig.packageTags[packageName]}`
 				else packageName += '@latest'
 				if (!isWorkspacePkg && !isExcludePkg) {
@@ -118,71 +115,6 @@ program
 			}
 			return pkgList
 		}
-
-		// const _options = {
-		// 	ignoreBinPackage: false, // ignore the packages with bin entry
-		// 	skipMissing: false, // skip calculation of missing dependencies
-		// 	parsers: {
-		// 		// the target parsers
-		// 		'**/*.js': depcheck.parser.es6,
-		// 		'**/*.jsx': depcheck.parser.jsx
-		// 	},
-		// 	// detectors: [
-		// 	// 	// the target detectors
-		// 	// 	depcheck.detector.requireCallExpression,
-		// 	// 	depcheck.detector.importDeclaration
-		// 	// ],
-		// 	// specials: [
-		// 	// 	// the target special parsers
-		// 	// 	depcheck.special.eslint,
-		// 	// 	depcheck.special.webpack
-		// 	// ],
-		// 	// package: {
-		// 	// 	// may specify dependencies instead of parsing package.json
-		// 	// 	dependencies: {
-		// 	// 		lodash: '^4.17.15'
-		// 	// 	},
-		// 	// 	devDependencies: {
-		// 	// 		eslint: '^6.6.0'
-		// 	// 	},
-		// 	// 	peerDependencies: {},
-		// 	// 	optionalDependencies: {}
-		// 	// },
-		// 	// files matching these patterns will be ignored
-		// 	// ignorePatterns: ['sandbox', 'dist', 'bower_components'],
-		// 	ignoreDirs: [
-		// 		'sandbox',
-		// 		'dist',
-		// 		'generated',
-		// 		'.generated',
-		// 		'build',
-		// 		'fixtures',
-		// 		'jspm_packages'
-		// 	],
-		// 	ignoreMatches: [
-		// 		'gulp-*',
-		// 		'grunt-*',
-		// 		'karma-*',
-		// 		'angular-*',
-		// 		'babel-*',
-		// 		'metalsmith-*',
-		// 		'eslint-plugin-*',
-		// 		'@types/*',
-		// 		'grunt',
-		// 		'mocha',
-		// 		'ava'
-		// 	]
-		// 	// specials: getSpecialParsers(currentState)
-		// }
-
-		// depcheck('/Users/saqqdy/www/saqqdy/reinstaller', _options).then(unused => {
-		// 	// console.log(unused.dependencies) // an array containing the unused dependencies
-		// 	// console.log(unused.devDependencies) // an array containing the unused devDependencies
-		// 	console.log(unused.missing) // a lookup containing the dependencies missing in `package.json` and where they are used
-		// 	// console.log(unused.using) // a lookup indicating each dependency is used by which files
-		// 	// console.log(unused.invalidFiles) // files that cannot access or parse
-		// 	// console.log(unused.invalidDirs) // directories that cannot access
-		// })
 	})
 
 // 自定义帮助

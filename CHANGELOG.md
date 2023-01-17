@@ -1,5 +1,11 @@
 # Change logs
 
+## 2023.01.18 v2.0.0
+
+1. add support for workspace
+2.
+3. fix bugs
+
 ## 2023.01.01 v1.1.0
 
 1. support check subpath

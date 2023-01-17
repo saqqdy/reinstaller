@@ -5,7 +5,7 @@ export interface Config extends OptionsSync {
 }
 
 function config(pkgName: string, options?: Config) {
-	return cosmiconfigSync(pkgName, options).search()?.config
+	return cosmiconfigSync(pkgName, options).search()?.config || {}
 }
 
 export { config, config as default }

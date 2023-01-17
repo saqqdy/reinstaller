@@ -1,6 +1,6 @@
-[index.md - v2.0.0-beta.1](README.md) / Exports
+[index.md - v2.0.0-beta.2](README.md) / Exports
 
-# index.md - v2.0.0-beta.1
+# index.md - v2.0.0-beta.2
 
 ## Table of contents
 
