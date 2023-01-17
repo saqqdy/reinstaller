@@ -8,7 +8,7 @@ import chalk from 'chalk'
 import { monorepoRootSync } from 'monorepo-root'
 import preferredPM from 'preferred-pm'
 import getGitRevParse from '@gitmars/core/lib/git/getGitRevParse'
-import config from './utils/config'
+import { absolutePath, config } from './utils'
 // import { version } from '../package.json' assert { type: 'json' }
 import lang from '#lib/utils/lang'
 
@@ -41,6 +41,8 @@ program
 		'[path]',
 		'Where to check. Defaults to current directory. Use -g for checking global modules.'
 	)
+	.option('--dry-run', t('Dry run'))
+	.option('-a, --all', t('run reinstall in every sub package'))
 	// .option('-u, --update', t('Interactive update.'))
 	// .option('-y, --update-all', t('Uninteractive update. Apply all updates without prompting.'))
 	// .option('-g, --global', t('Look at global modules.'))
@@ -62,11 +64,14 @@ program
 	.action(async (path?: string, options?: ReinstallerOption) => {
 		const { root } = getGitRevParse()
 		if (!path) path = root
-		const customConfig = config('reinstaller')
+		path = absolutePath(path)
 		const monorepoRoot = monorepoRootSync()
+		console.log(path)
+		const isRoot = monorepoRoot === process.cwd()
+		const customConfig = config('reinstaller')
+		console.log(11, options)
 		const pkg = require(join(path, 'package.json'))
 		const { name: pm } = (await preferredPM(path)) || { name: 'npm' }
-		const isRoot = monorepoRoot === process.cwd()
 		let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
 
 		switch (pm) {
@@ -77,6 +82,7 @@ program
 				argv = argv.concat(['i'])
 				break
 		}
+		process.exit(0)
 		// running in package root, use '-w'
 		if (monorepoRoot && isRoot) {
 			argv.push('-w')

@@ -61,6 +61,7 @@
 		"js-cool": "^2.8.0",
 		"lodash-es": "^4.17.21",
 		"lodash-unified": "^1.0.3",
+		"micromatch": "^4.0.5",
 		"monorepo-root": "1.0.0-alpha.8",
 		"ora": "^6.1.2",
 		"os-locale": "^6.0.2",
