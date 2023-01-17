@@ -1,4 +1,4 @@
-[index.md - v1.1.0](../README.md) / [Exports](../modules.md) / ReinstallerOption
+[index.md - v2.0.0-beta.1](../README.md) / [Exports](../modules.md) / ReinstallerOption
 
 # Interface: ReinstallerOption
 
@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[installer.ts:22](https://github.com/saqqdy/reinstaller/blob/95481fb/src/installer.ts#L22)
+[installer.ts:22](https://github.com/saqqdy/reinstaller/blob/b5db748/src/installer.ts#L22)

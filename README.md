@@ -49,10 +49,10 @@ Use `.reinstallerrc` file
 
 ```json
 {
-    "packageTags": {
-        "vue": "next",
-        "js-cool": "^2.8.0",
-    }
+  "packageTags": {
+    "vue": "next",
+    "js-cool": "^2.8.0"
+  }
 }
 ```
 
@@ -60,7 +60,7 @@ Use `.reinstallerrc` file
 
 ```json
 {
-    "exclude": ["tsnd"]
+  "exclude": ["tsnd"]
 }
 ```
 
@@ -68,7 +68,7 @@ Use `.reinstallerrc` file
 
 ```json
 {
-    "registry": "https://registry.npmmirror.com"
+  "registry": "https://registry.npmmirror.com"
 }
 ```
 

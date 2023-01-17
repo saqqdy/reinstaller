@@ -13,18 +13,5 @@ module.exports = {
 		],
 		'@babel/typescript'
 	],
-	plugins: [
-		[
-			'@babel/plugin-proposal-decorators',
-			{
-				legacy: true
-			}
-		],
-		[
-			'@babel/plugin-proposal-class-properties',
-			{
-				loose: true
-			}
-		]
-	]
+	plugins: []
 }

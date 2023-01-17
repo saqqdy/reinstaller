@@ -74,7 +74,7 @@ program
 		const customConfig = config('reinstaller')
 		const pkg = require(join(path, 'package.json'))
 		const { name: pm } = (await preferredPM(path)) || { name: 'npm' }
-		let argv = ['--registry', customConfig.registry ?? 'https://registry.npmmirror.com']
+		let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
 
 		switch (pm) {
 			case 'yarn':
