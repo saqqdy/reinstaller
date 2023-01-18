@@ -36,7 +36,7 @@ specifiers:
   js-cool: ^2.8.0
   lodash-es: ^4.17.21
   lodash-unified: ^1.0.3
-  monorepo-root: 1.0.0-alpha.8
+  monorepo-root: ^1.2.1
   npm-run-all: ^4.1.5
   ora: ^6.1.2
   os-locale: ^6.0.2
@@ -66,7 +66,7 @@ dependencies:
   js-cool: 2.8.0_core-js@3.27.1
   lodash-es: 4.17.21
   lodash-unified: 1.0.3_6vt5du6ay2thm2pqhl32dksnvu
-  monorepo-root: 1.0.0-alpha.8
+  monorepo-root: 1.2.1
   ora: 6.1.2
   os-locale: 6.0.2
   preferred-pm: 3.0.3
@@ -2039,29 +2039,37 @@ packages:
       eslint-scope: 5.1.1
     dev: true
 
-  /@node-kit/lerna-workspace-root/1.0.0-alpha.8:
-    resolution: {integrity: sha512-7q2QdesasVk408Kzk0Vfr+4vnpA3ZCfclWAc57Xt8rOZp1dui814ofsPt4v7f2N6TbIJfoRG8LjLfbCNn6O+RQ==}
+  /@node-kit/lerna-workspace-root/1.2.1:
+    resolution: {integrity: sha512-D+BOW/pKMeqSKern1rzt9DV+gFF+Hu75PZWPQX1ZSgYpI3BWxggO+E19P8k3jh/2HJFrSh0JTooeIhFDWb5l4A==}
     dependencies:
-      '@node-kit/utils': 1.0.0-alpha.8
+      '@node-kit/utils': 1.2.1
       find-up: 6.3.0
     dev: false
 
-  /@node-kit/pnpm-workspace-root/1.0.0-alpha.8:
-    resolution: {integrity: sha512-n+utCiCmgeWUY7pS0mJit51eYkxwP4waBpHfQ6+BE7RS0soK00uK7rUnqC3Lm/+NgCgXfKvp3AAMZGZ5soiIeA==}
+  /@node-kit/pnpm-workspace-root/1.2.1:
+    resolution: {integrity: sha512-qjm3CdX0waG+gb/QuDxch5GZi/FOzC2q27j5sqD1m7joKSuuM3W2VNZZfnrZQ6ZZCreD685O9Fxy1eHtPtFmpg==}
     dependencies:
-      '@node-kit/utils': 1.0.0-alpha.8
+      '@node-kit/utils': 1.2.1
       '@pnpm/error': 4.0.1
       find-up: 6.3.0
     dev: false
 
-  /@node-kit/utils/1.0.0-alpha.8:
-    resolution: {integrity: sha512-dANX9mR1yglbDbLTSu+xPBAzv4WzbX8WUXj/snsESAA6pwvlKMwPDpcIXgTKAAtey5cT+etFEluuysp16EOS2w==}
+  /@node-kit/utils/1.2.1:
+    resolution: {integrity: sha512-Dg4OcME0qNvw8H3HTjoOzikqoNAiWhFQZLH0yjnzh9Mj/yQ+fCxV6org0l3mWj28hBrYBBxd1YST/1vTcQT8yA==}
     dev: false
 
-  /@node-kit/yarn-workspace-root/1.0.0-alpha.8:
-    resolution: {integrity: sha512-3OlOzYt9kVhxDdKx6Ra1max8Pg0t76Y3P5tIcwr3ScUDaumWqOnj0eYW9CQC/ZwYtzQOtS3VY6qHR3z+6liYng==}
+  /@node-kit/workspace-root/1.2.1:
+    resolution: {integrity: sha512-zYVIqx0oYsHcXt/nxLRpAkJQqrPRYOjW2OsoVOGglIZx1HpOdIB6lSXBbS3HOSP7WTFfhMNP7IW6I+iCQFkDDA==}
     dependencies:
-      '@node-kit/utils': 1.0.0-alpha.8
+      '@node-kit/lerna-workspace-root': 1.2.1
+      '@node-kit/pnpm-workspace-root': 1.2.1
+      '@node-kit/yarn-workspace-root': 1.2.1
+    dev: false
+
+  /@node-kit/yarn-workspace-root/1.2.1:
+    resolution: {integrity: sha512-TgAm/DXGWPEK6oksTvoxd8Q7YbCgfbB+Vp4pVXfOv/5kqaNVsGOHAzCKwfJtAUp4GCGgAf52yf6GBh7pFJYG2w==}
+    dependencies:
+      '@node-kit/utils': 1.2.1
       find-up: 6.3.0
       micromatch: 4.0.5
     dev: false
@@ -6536,12 +6544,10 @@ packages:
     hasBin: true
     dev: true
 
-  /monorepo-root/1.0.0-alpha.8:
-    resolution: {integrity: sha512-35MjgM6UzG/11aKor7SGT1BbRyzSO6u+UgFE6APDbqLF+4mekkXb0n90GCwbX0TZhXf1y1VWp8FXFF7+U+hSqQ==}
+  /monorepo-root/1.2.1:
+    resolution: {integrity: sha512-R85yOTNGztkCOVZ3JoBQ+3GsbJDsMnuuUDJz8/GhcoePxLYg18qd5vn3WRankWrtNKmB0M3TzzrTgDdeyPeoCg==}
     dependencies:
-      '@node-kit/lerna-workspace-root': 1.0.0-alpha.8
-      '@node-kit/pnpm-workspace-root': 1.0.0-alpha.8
-      '@node-kit/yarn-workspace-root': 1.0.0-alpha.8
+      '@node-kit/workspace-root': 1.2.1
     dev: false
 
   /ms/2.0.0:
