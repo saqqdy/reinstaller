@@ -1,5 +1,6 @@
 export declare interface ReinstallerOption {
-    update?: boolean;
+    all?: boolean;
+    dryRun?: boolean;
 }
 
 export { }

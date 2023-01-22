@@ -1,6 +1,6 @@
 # Change logs
 
-## 2023.01.18 v2.0.0
+## 2023.01.22 v2.0.1
 
 1. add support for workspace
 2. fix bugs

@@ -1,14 +1,10 @@
 #!/usr/bin/env ts-node
 
 import { createRequire } from 'node:module'
-import { spawnSync } from 'node:child_process'
-import { join } from 'node:path'
 import { program } from 'commander'
 import chalk from 'chalk'
-import { monorepoRootSync } from 'monorepo-root'
-import preferredPM from 'preferred-pm'
-import getGitRevParse from '@gitmars/core/lib/git/getGitRevParse'
-import { absolutePath, config } from './utils'
+import { workspaceProjectsSync } from 'workspace-projects'
+import { install } from './utils'
 // import { version } from '../package.json' assert { type: 'json' }
 import lang from '#lib/utils/lang'
 
@@ -18,7 +14,8 @@ const { yellow } = chalk
 const { version } = require('../package.json')
 
 export interface ReinstallerOption {
-	update?: boolean
+	all?: boolean
+	dryRun?: boolean
 }
 
 program.version(
@@ -43,83 +40,14 @@ program
 	)
 	.option('--dry-run', t('Dry run'))
 	.option('-a, --all', t('run reinstall in every sub package'))
-	// .option('-u, --update', t('Interactive update.'))
-	// .option('-y, --update-all', t('Uninteractive update. Apply all updates without prompting.'))
-	// .option('-g, --global', t('Look at global modules.'))
-	// .option('-s, --skip-unused', t('Skip check for unused packages.'))
-	// .option('-p, --production', t('Skip devDependencies.'))
-	// .option('-d, --dev-only ', t('Look at devDependencies only (skip dependencies).'))
-	// .option('-i, --ignore', t('Ignore dependencies based on succeeding glob.'))
-	// .option(
-	// 	'-E, --save-exact',
-	// 	t('Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.')
-	// )
-	// .option(
-	// 	'--specials',
-	// 	t('List of depcheck specials to include in check for unused dependencies.')
-	// )
-	// .option('--no-color', t('Force or disable color output.'))
-	// .option('--no-emoji', t('Remove emoji support. No emoji in default in CI environments.'))
-	// .option('--debug', t('Debug output. Throw in a gist when creating issues on github.'))
-	.action(async (path?: string, options?: ReinstallerOption) => {
-		const { root } = getGitRevParse()
-		if (!path) path = root
-		path = absolutePath(path)
-		const monorepoRoot = monorepoRootSync()
-		console.log(path)
-		const isRoot = monorepoRoot === process.cwd()
-		const customConfig = config('reinstaller')
-		console.log(11, options)
-		const pkg = require(join(path, 'package.json'))
-		const { name: pm } = (await preferredPM(path)) || { name: 'npm' }
-		let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
-
-		switch (pm) {
-			case 'yarn':
-				argv = argv.concat(['add'])
-				break
-			default:
-				argv = argv.concat(['i'])
-				break
+	.action(async (path: string = process.cwd(), options: ReinstallerOption = {}) => {
+		let projects = [path]
+		if (options.all) {
+			const workspaceProjects = workspaceProjectsSync()
+			workspaceProjects && (projects = workspaceProjects.concat(projects))
 		}
-		process.exit(0)
-		// running in package root, use '-w'
-		if (monorepoRoot && isRoot) {
-			argv.push('-w')
-		}
-
-		const pkgList = genInstallName(pkg.dependencies)
-		const devPkgList = genInstallName(pkg.devDependencies)
-
-		// run install
-		if (pkgList.length > 0 || devPkgList.length > 0) {
-			pkgList.length &&
-				spawnSync(pm, argv.concat(pkgList), {
-					stdio: 'inherit'
-				})
-			devPkgList.length &&
-				spawnSync(pm, argv.concat(devPkgList).concat(['-D']), {
-					stdio: 'inherit'
-				})
-		} else {
-			process.exit(1)
-		}
-
-		function genInstallName(dependencies: Record<string, string>) {
-			const pkgList: string[] = []
-			for (let packageName in dependencies) {
-				const isWorkspacePkg = dependencies[packageName] === 'workspace:*'
-				const isCustomize = /^npm:/.test(dependencies[packageName])
-				const isExcludePkg = customConfig.exclude?.includes(packageName)
-				if (isCustomize) packageName += `@${dependencies[packageName]}`
-				else if (packageName in (customConfig.packageTags || {}))
-					packageName += `@${customConfig.packageTags[packageName]}`
-				else packageName += '@latest'
-				if (!isWorkspacePkg && !isExcludePkg) {
-					pkgList.push(packageName)
-				}
-			}
-			return pkgList
+		for (const project of projects) {
+			await install(project, options.dryRun)
 		}
 	})
 

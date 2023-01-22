@@ -1,4 +1,4 @@
-[index.md - v2.0.0](../README.md) / [Exports](../modules.md) / ReinstallerOption
+[index.md - v2.0.1](../README.md) / [Exports](../modules.md) / ReinstallerOption
 
 # Interface: ReinstallerOption
 
@@ -6,14 +6,25 @@
 
 ### Properties
 
-- [update](ReinstallerOption.md#update)
+- [all](ReinstallerOption.md#all)
+- [dryRun](ReinstallerOption.md#dryrun)
 
 ## Properties
 
-### update
+### all
 
-• `Optional` **update**: `boolean`
+• `Optional` **all**: `boolean`
 
 #### Defined in
 
-[installer.ts:21](https://github.com/saqqdy/reinstaller/blob/90bbe5c/src/installer.ts#L21)
+[installer.ts:17](https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L17)
+
+---
+
+### dryRun
+
+• `Optional` **dryRun**: `boolean`
+
+#### Defined in
+
+[installer.ts:18](https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L18)

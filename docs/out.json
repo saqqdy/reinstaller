@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "index.md - v2.0.0",
+	"name": "index.md - v2.0.1",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
@@ -15,7 +15,7 @@
 			"children": [
 				{
 					"id": 2,
-					"name": "update",
+					"name": "all",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {
@@ -24,9 +24,30 @@
 					"sources": [
 						{
 							"fileName": "installer.ts",
-							"line": 21,
+							"line": 17,
 							"character": 1,
-							"url": "https://github.com/saqqdy/reinstaller/blob/90bbe5c/src/installer.ts#L21"
+							"url": "https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L17"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 3,
+					"name": "dryRun",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "installer.ts",
+							"line": 18,
+							"character": 1,
+							"url": "https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L18"
 						}
 					],
 					"type": {
@@ -39,16 +60,17 @@
 				{
 					"title": "Properties",
 					"children": [
-						2
+						2,
+						3
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "installer.ts",
-					"line": 20,
+					"line": 16,
 					"character": 17,
-					"url": "https://github.com/saqqdy/reinstaller/blob/90bbe5c/src/installer.ts#L20"
+					"url": "https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L16"
 				}
 			]
 		}
@@ -66,7 +88,7 @@
 			"fileName": "installer.ts",
 			"line": 3,
 			"character": 0,
-			"url": "https://github.com/saqqdy/reinstaller/blob/90bbe5c/src/installer.ts#L3"
+			"url": "https://github.com/saqqdy/reinstaller/blob/14e3cb9/src/installer.ts#L3"
 		}
 	]
 }
