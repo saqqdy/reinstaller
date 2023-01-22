@@ -52,10 +52,12 @@ export async function install(cwd: string = process.cwd(), dryRun = false) {
 	} else if (pkgList.length > 0 || devPkgList.length > 0) {
 		pkgList.length &&
 			spawnSync(pm, argv.concat(pkgList), {
+				cwd,
 				stdio: 'inherit'
 			})
 		devPkgList.length &&
 			spawnSync(pm, argv.concat(devPkgList).concat(['-D']), {
+				cwd,
 				stdio: 'inherit'
 			})
 	} else {
