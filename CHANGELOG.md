@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.01.27 v2.1.0
+
+1. drop multi-languages
+2. upgrade packages
+
 ## 2023.01.22 v2.0.3
 
 1. upgrade packages
