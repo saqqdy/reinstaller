@@ -5,10 +5,7 @@ import { program } from 'commander'
 import chalk from 'chalk'
 import { workspaceProjectsSync } from 'workspace-projects'
 import { install } from './utils'
-// import { version } from '../package.json' assert { type: 'json' }
-import lang from '#lib/utils/lang'
 
-const { t } = lang
 const require = createRequire(import.meta.url)
 const { yellow } = chalk
 const { version } = require('../package.json')
@@ -27,19 +24,19 @@ program.version(
 		'                                        \n' +
 		`v${version}, powered by saqqdy\n`,
 	'-v, --version',
-	t('View reinstaller version number')
+	'View reinstaller version number'
 )
 
 program
 	.name('reinstaller')
 	.usage('[path] [options]')
-	.description(t('Check for outdated, incorrect, and unused dependencies.'))
+	.description('Check for outdated, incorrect, and unused dependencies.')
 	.argument(
 		'[path]',
 		'Where to check. Defaults to current directory. Use -g for checking global modules.'
 	)
-	.option('--dry-run', t('Dry run'))
-	.option('-a, --all', t('run reinstall in every sub package'))
+	.option('--dry-run', 'Dry run')
+	.option('-a, --all', 'run reinstall in every sub package')
 	.action(async (path: string = process.cwd(), options: ReinstallerOption = {}) => {
 		let projects = [path]
 		if (options.all) {
@@ -53,7 +50,7 @@ program
 
 // 自定义帮助
 program.on('--help', function () {
-	console.info(t('\nExamples'))
+	console.info('\nExamples')
 	console.info('  reinstaller', "# See what can be updated, what isn't being used.")
 	console.info('  reinstaller ../foo', '# Check another path.')
 	console.info(
@@ -66,13 +63,7 @@ program.on('--help', function () {
 program.on('command:*', function (types: string[], opts: string[]) {
 	const cmd = ['check', 'ck']
 	if (!cmd.includes(types[0])) {
-		console.info(
-			yellow(
-				t('Reinstaller does not provide the command "reinstaller {command}"', {
-					command: types[0]
-				})
-			)
-		)
+		console.info(yellow(`Reinstaller does not provide the command "reinstaller ${types[0]}"`))
 	}
 })
 
