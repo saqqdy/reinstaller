@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[installer.ts:14](https://github.com/saqqdy/reinstaller/blob/73f162f/src/installer.ts#L14)
+[installer.ts:14](https://github.com/saqqdy/reinstaller/blob/620f39a/src/installer.ts#L14)
 
 ---
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[installer.ts:15](https://github.com/saqqdy/reinstaller/blob/73f162f/src/installer.ts#L15)
+[installer.ts:15](https://github.com/saqqdy/reinstaller/blob/620f39a/src/installer.ts#L15)
