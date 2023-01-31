@@ -2,10 +2,9 @@ import { resolve } from 'node:path'
 import { spawnSync } from 'node:child_process'
 import consola from 'consola'
 import { monorepoRootSync } from 'monorepo-root'
-import preferredPM from 'preferred-pm'
-import { readJSONSync } from '@node-kit/utils'
-import { absolutePath } from './absolutePath'
-import { config } from './config'
+import whatPM from 'what-pm'
+import { readJSONSync } from '@node-kit/extra.fs'
+import { absolutePath, config } from './'
 
 export interface PackageJSON {
 	dependencies?: Record<string, string>
@@ -27,7 +26,7 @@ export async function install(cwd: string = process.cwd(), dryRun = false) {
 	const pkg = readJSONSync(resolve(cwd, 'package.json')) as PackageJSON
 	const pkgList = genInstallName(pkg.dependencies || {})
 	const devPkgList = genInstallName(pkg.devDependencies || {})
-	const { name: pm } = (await preferredPM(cwd)) || { name: 'npm' }
+	const { name: pm } = (await whatPM(cwd)) || { name: 'npm' }
 
 	let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
 

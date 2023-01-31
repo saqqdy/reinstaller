@@ -1,7 +1,7 @@
 {
 	"name": "reinstaller",
 	"description": "A installing tool",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"packageManager": "pnpm@7.25.0",
 	"bin": {
 		"reinstaller": "./bin/index.js",
@@ -51,7 +51,7 @@
 		"prettier": "prettier --write \"**/*.{js,ts,jsx,tsx,yml,json,md}\""
 	},
 	"dependencies": {
-		"@node-kit/utils": "^2.0.0",
+		"@node-kit/extra.fs": "^2.0.0",
 		"commander": "^10.0.0",
 		"consola": "^2.15.3",
 		"core-js": "^3.27.2",
@@ -61,7 +61,7 @@
 		"js-cool": "^2.8.0",
 		"monorepo-root": "^2.0.0",
 		"ora": "^6.1.2",
-		"preferred-pm": "^3.0.3",
+		"what-pm": "^2.0.0",
 		"workspace-projects": "^2.0.0"
 	},
 	"devDependencies": {

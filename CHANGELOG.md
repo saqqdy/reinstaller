@@ -1,5 +1,11 @@
 # Change logs
 
+## 2023.01.27 v2.2.0
+
+1. drop `@node-kit/extra.fs`, use `@node-kit/extra.fs` instead
+2. use `what-pm`
+3. upgrade packages
+
 ## 2023.01.27 v2.1.0
 
 1. drop multi-languages
