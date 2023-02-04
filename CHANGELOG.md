@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.02.03 v2.3.0
+
+1. fix dependencies
+2. upgrade packages
+
 ## 2023.01.27 v2.2.0
 
 1. drop `@node-kit/extra.fs`, use `@node-kit/extra.fs` instead

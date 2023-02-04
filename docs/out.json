@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "index.md - v2.2.0",
+	"name": "index.md - v2.3.0",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
@@ -26,7 +26,7 @@
 							"fileName": "installer.ts",
 							"line": 14,
 							"character": 1,
-							"url": "https://github.com/saqqdy/reinstaller/blob/ad05632/src/installer.ts#L14"
+							"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L14"
 						}
 					],
 					"type": {
@@ -47,7 +47,7 @@
 							"fileName": "installer.ts",
 							"line": 15,
 							"character": 1,
-							"url": "https://github.com/saqqdy/reinstaller/blob/ad05632/src/installer.ts#L15"
+							"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L15"
 						}
 					],
 					"type": {
@@ -70,7 +70,7 @@
 					"fileName": "installer.ts",
 					"line": 13,
 					"character": 17,
-					"url": "https://github.com/saqqdy/reinstaller/blob/ad05632/src/installer.ts#L13"
+					"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L13"
 				}
 			]
 		}
@@ -88,7 +88,7 @@
 			"fileName": "installer.ts",
 			"line": 3,
 			"character": 0,
-			"url": "https://github.com/saqqdy/reinstaller/blob/ad05632/src/installer.ts#L3"
+			"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L3"
 		}
 	]
 }
