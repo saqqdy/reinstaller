@@ -1706,6 +1706,7 @@ packages:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
+      - typescript
     dev: true
 
   /@eslint/eslintrc/2.0.2:
