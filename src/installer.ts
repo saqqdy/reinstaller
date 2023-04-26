@@ -29,6 +29,9 @@ program.version(
 
 program
 	.name('reinstaller')
+	// reinstaller install
+	.command('install', 'install package for single-repo or mono-repo project')
+	.alias('i')
 	.usage('[path] [options]')
 	.description('Check for outdated, incorrect, and unused dependencies.')
 	.argument(

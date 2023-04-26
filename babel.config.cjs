@@ -13,5 +13,5 @@ module.exports = {
 		],
 		'@babel/typescript'
 	],
-	plugins: []
+	plugins: ['@babel/plugin-syntax-import-assertions']
 }

@@ -59,10 +59,7 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"children": [
-						2,
-						3
-					]
+					"children": [2, 3]
 				}
 			],
 			"sources": [
@@ -78,9 +75,7 @@
 	"groups": [
 		{
 			"title": "Interfaces",
-			"children": [
-				1
-			]
+			"children": [1]
 		}
 	],
 	"sources": [
