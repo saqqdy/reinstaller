@@ -1,5 +1,13 @@
 # Change logs
 
+## 2023.04.27 v3.0.0
+
+1. new sub-command `reinstaller install`, run `reinstaller install --help` for help
+2. change type to `module`
+3. drop cjs files
+4. fix bugs
+5. upgrade packages
+
 ## 2023.02.03 v2.3.0
 
 1. fix dependencies

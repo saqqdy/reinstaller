@@ -1,9 +1,9 @@
 {
 	"name": "reinstaller",
-	"description": "A installing tool",
+	"description": "A simple install tool for upgrade npm package version",
 	"type": "module",
-	"version": "3.0.0",
-	"packageManager": "pnpm@7.25.0",
+	"version": "3.0.0-beta.1",
+	"packageManager": "pnpm@8.3.1",
 	"bin": {
 		"reinstaller": "./bin/index.js",
 		"installer": "./bin/index.js"
