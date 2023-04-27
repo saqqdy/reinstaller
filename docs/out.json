@@ -350,18 +350,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								18,
-								10,
-								16,
-								12,
-								14,
-								9,
-								11,
-								15,
-								17,
-								13
-							]
+							"children": [18, 10, 16, 12, 14, 9, 11, 15, 17, 13]
 						}
 					],
 					"sources": [
@@ -470,11 +459,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								49,
-								48,
-								50
-							]
+							"children": [49, 48, 50]
 						}
 					],
 					"sources": [
@@ -554,10 +539,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								45,
-								46
-							]
+							"children": [45, 46]
 						}
 					],
 					"sources": [
@@ -657,10 +639,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								35,
-								36
-							]
+							"children": [35, 36]
 						}
 					],
 					"sources": [
@@ -752,11 +731,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								42,
-								41,
-								43
-							]
+							"children": [42, 41, 43]
 						}
 					],
 					"sources": [
@@ -833,10 +808,7 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [
-								38,
-								39
-							]
+							"children": [38, 39]
 						}
 					],
 					"sources": [
@@ -1313,24 +1285,11 @@
 			"groups": [
 				{
 					"title": "Interfaces",
-					"children": [
-						8,
-						47,
-						44,
-						34,
-						40,
-						37
-					]
+					"children": [8, 47, 44, 34, 40, 37]
 				},
 				{
 					"title": "Functions",
-					"children": [
-						19,
-						4,
-						31,
-						22,
-						26
-					]
+					"children": [19, 4, 31, 22, 26]
 				}
 			],
 			"sources": [
@@ -1346,11 +1305,7 @@
 	"groups": [
 		{
 			"title": "Modules",
-			"children": [
-				1,
-				2,
-				3
-			]
+			"children": [1, 2, 3]
 		}
 	],
 	"packageName": "reinstaller",

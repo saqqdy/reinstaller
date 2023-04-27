@@ -1,4 +1,4 @@
-name: Npm publish test version
+name: npm-publish-test
 
 on:
   push:
