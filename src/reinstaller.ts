@@ -26,7 +26,9 @@ program.version(
 program
 	.name('reinstaller')
 	// reinstaller install
-	.command('install', 'Install package for single-repo or mono-repo project')
+	.command('install', 'Install package for single-repo or mono-repo project', {
+		executableFile: 'dist/reinstaller-install.mjs'
+	})
 	.alias('i')
 	.usage('[path] [options]')
 	.description('Check for outdated, incorrect, and unused dependencies.')

@@ -16,7 +16,7 @@ A simple install tool for upgrade npm package version
 
 <div style="text-align: center; margin-bottom: 20px;" align="center">
 
-## **Full API docs： [API Docs](./docs/modules.md)**
+### **[Documentation](https://www.saqqdy.com/reinstaller)** • **[Change Log](./CHANGELOG.md)**
 
 </div>
 
