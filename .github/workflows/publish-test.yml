@@ -1,4 +1,4 @@
-name: Npm publish test version
+name: npm-publish-test
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7.25.0
+          version: 8.3.1
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3

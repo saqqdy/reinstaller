@@ -2,7 +2,7 @@
 
 # reinstaller
 
-A simple installing tool
+A simple install tool for upgrade npm package version
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -22,7 +22,7 @@ A simple installing tool
 
 ## Installing
 
-```bash{2,4}
+```bash
 # use pnpm
 $ pnpm install -g reinstaller
 
@@ -35,10 +35,20 @@ $ yarn global add reinstaller
 
 ## Usage
 
+1. Upgrade packages
+
 ```bash
-reinstaller .
+reinstaller
 # or
 reinstaller webapp/app
+```
+
+2. Install new packages
+
+```bash
+reinstaller install rm-all vue -- -D
+# or
+reinstaller i rm-all vue -- -D
 ```
 
 ## Configuration

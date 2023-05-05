@@ -1,94 +1,1663 @@
 {
 	"id": 0,
-	"name": "index.md - v2.3.0",
+	"name": "index.md",
+	"variant": "project",
 	"kind": 1,
-	"kindString": "Project",
 	"flags": {},
-	"originalName": "index.md",
 	"children": [
 		{
 			"id": 1,
-			"name": "ReinstallerOption",
-			"kind": 256,
-			"kindString": "Interface",
+			"name": "installer",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/installer.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/installer.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "installer-install",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "src/installer-install.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/installer-install.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "utils",
+			"variant": "declaration",
+			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 2,
-					"name": "all",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isOptional": true
-					},
-					"sources": [
+					"id": 8,
+					"name": "Config",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
 						{
-							"fileName": "installer.ts",
-							"line": 14,
-							"character": 1,
-							"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L14"
+							"id": 18,
+							"name": "cache",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 12,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.cache"
+							}
+						},
+						{
+							"id": 10,
+							"name": "exclude",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/config.ts",
+									"line": 6,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L6"
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 16,
+							"name": "ignoreEmptySearchPlaces",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 10,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.ignoreEmptySearchPlaces"
+							}
+						},
+						{
+							"id": 12,
+							"name": "loaders",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 19,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/types.ts",
+									"qualifiedName": "LoadersSync"
+								},
+								"name": "LoadersSync",
+								"package": "cosmiconfig"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.loaders"
+							}
+						},
+						{
+							"id": 14,
+							"name": "packageProp",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 8,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.packageProp"
+							}
+						},
+						{
+							"id": 9,
+							"name": "packageTags",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/config.ts",
+									"line": 5,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L5"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+									"qualifiedName": "Record"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "unknown"
+									}
+								],
+								"name": "Record",
+								"package": "typescript"
+							}
+						},
+						{
+							"id": 11,
+							"name": "registry",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/config.ts",
+									"line": 7,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 15,
+							"name": "searchPlaces",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 9,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.searchPlaces"
+							}
+						},
+						{
+							"id": 17,
+							"name": "stopDir",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 11,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.stopDir"
+							}
+						},
+						{
+							"id": 13,
+							"name": "transform",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isExternal": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/dist/index.d.ts",
+									"line": 20,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+									"qualifiedName": "TransformSync"
+								},
+								"name": "TransformSync",
+								"package": "cosmiconfig"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "OptionsSync.transform"
+							}
 						}
 					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								18,
+								10,
+								16,
+								12,
+								14,
+								9,
+								11,
+								15,
+								17,
+								13
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/config.ts",
+							"line": 3,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L3"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": {
+								"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+								"qualifiedName": "OptionsSync"
+							},
+							"name": "OptionsSync",
+							"package": "cosmiconfig"
+						}
+					]
 				},
 				{
-					"id": 3,
-					"name": "dryRun",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isOptional": true
-					},
-					"sources": [
+					"id": 47,
+					"name": "InstallOneOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
 						{
-							"fileName": "installer.ts",
-							"line": 15,
-							"character": 1,
-							"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L15"
+							"id": 49,
+							"name": "all",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 7,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 42,
+								"name": "ReinstallerInstallOption.all"
+							}
+						},
+						{
+							"id": 48,
+							"name": "dev",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 12,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 41,
+								"name": "ReinstallerInstallOption.dev"
+							}
+						},
+						{
+							"id": 50,
+							"name": "dryRun",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 8,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 43,
+								"name": "ReinstallerInstallOption.dryRun"
+							}
 						}
 					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								49,
+								48,
+								50
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/types.ts",
+							"line": 17,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L17"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 40,
+							"name": "ReinstallerInstallOption",
+							"package": "reinstaller"
+						}
+					]
+				},
+				{
+					"id": 44,
+					"name": "InstallOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
+						{
+							"id": 45,
+							"name": "all",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 7,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 38,
+								"name": "ReinstallerOption.all"
+							}
+						},
+						{
+							"id": 46,
+							"name": "dryRun",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 8,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 39,
+								"name": "ReinstallerOption.dryRun"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								45,
+								46
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/types.ts",
+							"line": 15,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L15"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 37,
+							"name": "ReinstallerOption",
+							"package": "reinstaller"
+						}
+					]
+				},
+				{
+					"id": 34,
+					"name": "PackageJSON",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
+						{
+							"id": 35,
+							"name": "dependencies",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 2,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L2"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+									"qualifiedName": "Record"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								],
+								"name": "Record",
+								"package": "typescript"
+							}
+						},
+						{
+							"id": 36,
+							"name": "devDependencies",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 3,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L3"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+									"qualifiedName": "Record"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								],
+								"name": "Record",
+								"package": "typescript"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								35,
+								36
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/types.ts",
+							"line": 1,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L1"
+						}
+					]
+				},
+				{
+					"id": 40,
+					"name": "ReinstallerInstallOption",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
+						{
+							"id": 42,
+							"name": "all",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 7,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 38,
+								"name": "ReinstallerOption.all"
+							}
+						},
+						{
+							"id": 41,
+							"name": "dev",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 12,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L12"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 43,
+							"name": "dryRun",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 8,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 39,
+								"name": "ReinstallerOption.dryRun"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								42,
+								41,
+								43
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/types.ts",
+							"line": 11,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L11"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 37,
+							"name": "ReinstallerOption",
+							"package": "reinstaller"
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"target": 47,
+							"name": "InstallOneOptions"
+						}
+					]
+				},
+				{
+					"id": 37,
+					"name": "ReinstallerOption",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"children": [
+						{
+							"id": 38,
+							"name": "all",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 7,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 39,
+							"name": "dryRun",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/types.ts",
+									"line": 8,
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								38,
+								39
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/utils/types.ts",
+							"line": 6,
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L6"
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"target": 40,
+							"name": "ReinstallerInstallOption"
+						},
+						{
+							"type": "reference",
+							"target": 44,
+							"name": "InstallOptions"
+						}
+					]
+				},
+				{
+					"id": 19,
+					"name": "absolutePath",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/utils/absolutePath.ts",
+							"line": 3,
+							"character": 16,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/absolutePath.ts#L3"
+						}
+					],
+					"signatures": [
+						{
+							"id": 20,
+							"name": "absolutePath",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/utils/absolutePath.ts",
+									"line": 3,
+									"character": 0,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/absolutePath.ts#L3"
+								}
+							],
+							"parameters": [
+								{
+									"id": 21,
+									"name": "path",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 4,
+					"name": "config",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/utils/config.ts",
+							"line": 10,
+							"character": 16,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L10"
+						}
+					],
+					"signatures": [
+						{
+							"id": 5,
+							"name": "config",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/utils/config.ts",
+									"line": 10,
+									"character": 0,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L10"
+								}
+							],
+							"parameters": [
+								{
+									"id": 6,
+									"name": "pkgName",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 7,
+									"name": "options",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"target": 8,
+										"name": "Config",
+										"package": "reinstaller"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 31,
+					"name": "genInstallName",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/utils/install.ts",
+							"line": 120,
+							"character": 16,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L120"
+						}
+					],
+					"signatures": [
+						{
+							"id": 32,
+							"name": "genInstallName",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "generate install name"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "pkgList - packages"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/install.ts",
+									"line": 120,
+									"character": 0,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L120"
+								}
+							],
+							"parameters": [
+								{
+									"id": 33,
+									"name": "dependencies",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "dependencies"
+											}
+										]
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											{
+												"type": "reference",
+												"target": {
+													"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+													"qualifiedName": "Record"
+												},
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												],
+												"name": "Record",
+												"package": "typescript"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 22,
+					"name": "install",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/utils/install.ts",
+							"line": 19,
+							"character": 22,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L19"
+						}
+					],
+					"signatures": [
+						{
+							"id": 23,
+							"name": "install",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "install dependencies"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/install.ts",
+									"line": 19,
+									"character": 0,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L19"
+								}
+							],
+							"parameters": [
+								{
+									"id": 24,
+									"name": "cwd",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "run path"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 25,
+									"name": "options",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "ReinstallerOption"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": 44,
+										"name": "InstallOptions",
+										"package": "reinstaller"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 26,
+					"name": "installOne",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/utils/install.ts",
+							"line": 71,
+							"character": 22,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L71"
+						}
+					],
+					"signatures": [
+						{
+							"id": 27,
+							"name": "installOne",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "install one dependencies"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/utils/install.ts",
+									"line": 71,
+									"character": 0,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L71"
+								}
+							],
+							"parameters": [
+								{
+									"id": 28,
+									"name": "name",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "package name"
+											}
+										]
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										]
+									}
+								},
+								{
+									"id": 29,
+									"name": "cwd",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "run path"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 30,
+									"name": "options",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "InstallOneOptions"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": 47,
+										"name": "InstallOneOptions",
+										"package": "reinstaller"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"sourceFileName": "node_modules/.pnpm/typescript@5.0.4/node_modules/typescript/lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
 				}
 			],
 			"groups": [
 				{
-					"title": "Properties",
+					"title": "Interfaces",
 					"children": [
-						2,
-						3
+						8,
+						47,
+						44,
+						34,
+						40,
+						37
+					]
+				},
+				{
+					"title": "Functions",
+					"children": [
+						19,
+						4,
+						31,
+						22,
+						26
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "installer.ts",
-					"line": 13,
-					"character": 17,
-					"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L13"
+					"fileName": "src/utils/index.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/index.ts#L1"
 				}
 			]
 		}
 	],
 	"groups": [
 		{
-			"title": "Interfaces",
+			"title": "Modules",
 			"children": [
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
-	"sources": [
+	"packageName": "reinstaller",
+	"packageVersion": "3.0.0-beta.2",
+	"readme": [
 		{
-			"fileName": "installer.ts",
-			"line": 3,
-			"character": 0,
-			"url": "https://github.com/saqqdy/reinstaller/blob/3321aea/src/installer.ts#L3"
+			"kind": "text",
+			"text": "<div style=\"text-align: center;\" align=\"center\">\n\n# reinstaller\n\nA simple install tool for upgrade npm package version\n\n[![NPM version][npm-image]][npm-url]\n[![Codacy Badge][codacy-image]][codacy-url]\n[![Test coverage][codecov-image]][codecov-url]\n[![npm download][download-image]][download-url]\n[![License][license-image]][license-url]\n\n[![Sonar][sonar-image]][sonar-url]\n\n</div>\n\n<div style=\"text-align: center; margin-bottom: 20px;\" align=\"center\">\n\n## **Full API docs： [API Docs](./docs/modules.md)**\n\n</div>\n\n## Installing\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\n# use pnpm\n$ pnpm install -g reinstaller\n\n# use npm\n$ npm install -g reinstaller\n\n# use yarn\n$ yarn global add reinstaller\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Usage\n\n1. Upgrade packages\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nreinstaller\n# or\nreinstaller webapp/app\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n2. Install new packages\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nreinstaller install rm-all vue -- -D\n# or\nreinstaller i rm-all vue -- -D\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Configuration\n\nUse "
+		},
+		{
+			"kind": "code",
+			"text": "`.reinstallerrc`"
+		},
+		{
+			"kind": "text",
+			"text": " file\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`packageTags`"
+		},
+		{
+			"kind": "text",
+			"text": ": Specify the tags to be installed\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```json\n{\n  \"packageTags\": {\n    \"vue\": \"next\",\n    \"js-cool\": \"^2.8.0\"\n  }\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`exclude`"
+		},
+		{
+			"kind": "text",
+			"text": ": Exclude packages that you don't want to install\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```json\n{\n  \"exclude\": [\"tsnd\"]\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`registry`"
+		},
+		{
+			"kind": "text",
+			"text": ": Set registry\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```json\n{\n  \"registry\": \"https://registry.npmmirror.com\"\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Support & Issues\n\nPlease open an issue [here](https://github.com/saqqdy/reinstaller/issues).\n\n## License\n\n[MIT](LICENSE)\n\n[npm-image]: https://img.shields.io/npm/v/reinstaller.svg?style=flat-square\n[npm-url]: https://npmjs.org/package/reinstaller\n[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696\n[codacy-url]: https://www.codacy.com/gh/saqqdy/reinstaller/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/reinstaller&utm_campaign=Badge_Grade\n[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/reinstaller.svg?style=flat-square\n[codecov-url]: https://codecov.io/github/saqqdy/reinstaller?branch=master\n[download-image]: https://img.shields.io/npm/dm/reinstaller.svg?style=flat-square\n[download-url]: https://npmjs.org/package/reinstaller\n[license-image]: https://img.shields.io/badge/License-MIT-blue.svg\n[license-url]: LICENSE\n[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_reinstaller\n[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_reinstaller"
 		}
-	]
+	],
+	"symbolIdMap": {
+		"1": {
+			"sourceFileName": "src/installer.ts",
+			"qualifiedName": ""
+		},
+		"2": {
+			"sourceFileName": "src/installer-install.ts",
+			"qualifiedName": ""
+		},
+		"3": {
+			"sourceFileName": "src/utils/index.ts",
+			"qualifiedName": ""
+		},
+		"4": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "config"
+		},
+		"5": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "config"
+		},
+		"6": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "pkgName"
+		},
+		"7": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "options"
+		},
+		"8": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "Config"
+		},
+		"9": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "Config.packageTags"
+		},
+		"10": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "Config.exclude"
+		},
+		"11": {
+			"sourceFileName": "src/utils/config.ts",
+			"qualifiedName": "Config.registry"
+		},
+		"12": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsSync.loaders"
+		},
+		"13": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsSync.transform"
+		},
+		"14": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsBase.packageProp"
+		},
+		"15": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsBase.searchPlaces"
+		},
+		"16": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsBase.ignoreEmptySearchPlaces"
+		},
+		"17": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsBase.stopDir"
+		},
+		"18": {
+			"sourceFileName": "node_modules/.pnpm/cosmiconfig@8.1.3/node_modules/cosmiconfig/src/index.ts",
+			"qualifiedName": "OptionsBase.cache"
+		},
+		"19": {
+			"sourceFileName": "src/utils/absolutePath.ts",
+			"qualifiedName": "absolutePath"
+		},
+		"20": {
+			"sourceFileName": "src/utils/absolutePath.ts",
+			"qualifiedName": "absolutePath"
+		},
+		"21": {
+			"sourceFileName": "src/utils/absolutePath.ts",
+			"qualifiedName": "path"
+		},
+		"22": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "install"
+		},
+		"23": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "install"
+		},
+		"24": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "cwd"
+		},
+		"25": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "options"
+		},
+		"26": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "installOne"
+		},
+		"27": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "installOne"
+		},
+		"28": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "name"
+		},
+		"29": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "cwd"
+		},
+		"30": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "options"
+		},
+		"31": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "genInstallName"
+		},
+		"32": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "genInstallName"
+		},
+		"33": {
+			"sourceFileName": "src/utils/install.ts",
+			"qualifiedName": "dependencies"
+		},
+		"34": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "PackageJSON"
+		},
+		"35": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "PackageJSON.dependencies"
+		},
+		"36": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "PackageJSON.devDependencies"
+		},
+		"37": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption"
+		},
+		"38": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.all"
+		},
+		"39": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.dryRun"
+		},
+		"40": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerInstallOption"
+		},
+		"41": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerInstallOption.dev"
+		},
+		"42": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.all"
+		},
+		"43": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.dryRun"
+		},
+		"44": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "InstallOptions"
+		},
+		"45": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.all"
+		},
+		"46": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.dryRun"
+		},
+		"47": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "InstallOneOptions"
+		},
+		"48": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerInstallOption.dev"
+		},
+		"49": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.all"
+		},
+		"50": {
+			"sourceFileName": "src/utils/types.ts",
+			"qualifiedName": "ReinstallerOption.dryRun"
+		}
+	}
 }

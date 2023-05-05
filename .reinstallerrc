@@ -1,0 +1,8 @@
+{
+	"packageTags": {
+		"reinstaller": "latest"
+	},
+	"exclude": [],
+	"packageManager": "pnpm",
+	"registry": "https://registry.npmmirror.com"
+}

@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-import('../es/installer.mjs')
+import('../dist/installer.mjs')

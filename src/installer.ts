@@ -3,17 +3,13 @@
 import { createRequire } from 'node:module'
 import { program } from 'commander'
 import chalk from 'chalk'
+import consola from 'consola'
 import { workspaceProjectsSync } from 'workspace-projects'
-import { install } from './utils'
+import { type ReinstallerOption, install } from './utils'
 
 const require = createRequire(import.meta.url)
 const { yellow } = chalk
 const { version } = require('../package.json')
-
-export interface ReinstallerOption {
-	all?: boolean
-	dryRun?: boolean
-}
 
 program.version(
 	'	\n' +
@@ -29,6 +25,9 @@ program.version(
 
 program
 	.name('reinstaller')
+	// reinstaller install
+	.command('install', 'Install package for single-repo or mono-repo project')
+	.alias('i')
 	.usage('[path] [options]')
 	.description('Check for outdated, incorrect, and unused dependencies.')
 	.argument(
@@ -36,15 +35,19 @@ program
 		'Where to check. Defaults to current directory. Use -g for checking global modules.'
 	)
 	.option('--dry-run', 'Dry run')
-	.option('-a, --all', 'run reinstall in every sub package')
-	.action(async (path: string = process.cwd(), options: ReinstallerOption = {}) => {
-		let projects = [path]
-		if (options.all) {
+	.option('-a, --all', 'Run reinstall in every sub package')
+	.action(async (path: string, options: ReinstallerOption = {}) => {
+		if (path && options.all)
+			consola.warn('The "--all" does not take effect when the "path" parameter is passed in')
+
+		let projects: string[] = [process.cwd()]
+		if (path) projects = [path]
+		else if (options.all) {
 			const workspaceProjects = workspaceProjectsSync()
 			workspaceProjects && (projects = workspaceProjects.concat(projects))
 		}
 		for (const project of projects) {
-			await install(project, options.dryRun)
+			await install(project, options)
 		}
 	})
 

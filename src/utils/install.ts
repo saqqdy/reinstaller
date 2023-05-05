@@ -4,12 +4,9 @@ import consola from 'consola'
 import { monorepoRootSync } from 'monorepo-root'
 import whatPM from 'what-pm'
 import { readJSONSync } from '@node-kit/extra.fs'
-import { absolutePath, config } from './'
-
-export interface PackageJSON {
-	dependencies?: Record<string, string>
-	devDependencies?: Record<string, string>
-}
+import { absolutePath } from './absolutePath'
+import { config } from './config'
+import { type InstallOneOptions, type InstallOptions, type PackageJSON } from './types'
 
 const customConfig = config('reinstaller')
 
@@ -17,9 +14,9 @@ const customConfig = config('reinstaller')
  * install dependencies
  *
  * @param cwd - run path
- * @param dryRun - --dry-run
+ * @param options - ReinstallerOption
  */
-export async function install(cwd: string = process.cwd(), dryRun = false) {
+export async function install(cwd: string = process.cwd(), options: InstallOptions) {
 	cwd = absolutePath(cwd)
 	const monorepoRoot = monorepoRootSync()
 	const isInMonorepoRoot = monorepoRoot && monorepoRoot === cwd
@@ -44,10 +41,10 @@ export async function install(cwd: string = process.cwd(), dryRun = false) {
 	}
 
 	// run install
-	if (dryRun) {
+	if (options.dryRun) {
 		consola.info(cwd)
 		consola.info(pkgList)
-		consola.info(devPkgList)
+		consola.info(argv, devPkgList)
 	} else if (pkgList.length > 0 || devPkgList.length > 0) {
 		pkgList.length &&
 			spawnSync(pm, argv.concat(pkgList), {
@@ -65,13 +62,69 @@ export async function install(cwd: string = process.cwd(), dryRun = false) {
 }
 
 /**
+ * install one dependencies
+ *
+ * @param name - package name
+ * @param cwd - run path
+ * @param options - InstallOneOptions
+ */
+export async function installOne(
+	name: string | string[],
+	cwd: string = process.cwd(),
+	options: InstallOneOptions
+) {
+	if (typeof name === 'string') name = [name]
+	cwd = absolutePath(cwd)
+	const monorepoRoot = monorepoRootSync()
+	const isInMonorepoRoot = monorepoRoot && monorepoRoot === cwd
+	const pkgList = genInstallName(name)
+	const { name: pm } = (await whatPM(cwd)) || { name: 'npm' }
+
+	let argv = customConfig.registry ? ['--registry', customConfig.registry] : []
+
+	switch (pm) {
+		case 'yarn':
+			argv = argv.concat(['add'])
+			break
+		default:
+			argv = argv.concat(['i'])
+			break
+	}
+	// running in package root, use '-w'
+	if (isInMonorepoRoot) {
+		argv.push(pm === 'yarn' ? '-W' : '-w')
+	}
+	if (options.dev) argv.push('-D')
+
+	// run install
+	if (options.dryRun) {
+		consola.info(cwd)
+		consola.info(argv, pkgList)
+	} else if (pkgList.length > 0) {
+		pkgList.length &&
+			spawnSync(pm, argv.concat(pkgList), {
+				cwd,
+				stdio: 'inherit'
+			})
+	} else {
+		process.exit(1)
+	}
+}
+
+/**
  * generate install name
  *
  * @param dependencies - dependencies
  * @returns pkgList - packages
  */
-export function genInstallName(dependencies: Record<string, string>) {
+export function genInstallName(dependencies: string | string[] | Record<string, string>) {
 	const pkgList: string[] = []
+	if (typeof dependencies === 'string') dependencies = { [dependencies]: 'latest' }
+	if (Array.isArray(dependencies)) {
+		const _map: Record<string, string> = {}
+		for (const name of dependencies) _map[name] = 'latest'
+		dependencies = _map
+	}
 	for (let packageName in dependencies) {
 		const isWorkspacePkg = dependencies[packageName] === 'workspace:*'
 		const isCustomize = /^npm:/.test(dependencies[packageName])
