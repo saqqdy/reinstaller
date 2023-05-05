@@ -16,7 +16,7 @@
 					"fileName": "src/installer.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/installer.ts#L1"
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/installer.ts#L1"
 				}
 			]
 		},
@@ -31,7 +31,7 @@
 					"fileName": "src/installer-install.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/installer-install.ts#L1"
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/installer-install.ts#L1"
 				}
 			]
 		},
@@ -88,7 +88,7 @@
 									"fileName": "src/utils/config.ts",
 									"line": 6,
 									"character": 1,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L6"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L6"
 								}
 							],
 							"type": {
@@ -216,7 +216,7 @@
 									"fileName": "src/utils/config.ts",
 									"line": 5,
 									"character": 1,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L5"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L5"
 								}
 							],
 							"type": {
@@ -252,7 +252,7 @@
 									"fileName": "src/utils/config.ts",
 									"line": 7,
 									"character": 1,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L7"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L7"
 								}
 							],
 							"type": {
@@ -350,7 +350,18 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [18, 10, 16, 12, 14, 9, 11, 15, 17, 13]
+							"children": [
+								18,
+								10,
+								16,
+								12,
+								14,
+								9,
+								11,
+								15,
+								17,
+								13
+							]
 						}
 					],
 					"sources": [
@@ -358,7 +369,7 @@
 							"fileName": "src/utils/config.ts",
 							"line": 3,
 							"character": 17,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L3"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L3"
 						}
 					],
 					"extendedTypes": [
@@ -392,7 +403,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 7,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
 								}
 							],
 							"type": {
@@ -417,7 +429,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 12,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L12"
 								}
 							],
 							"type": {
@@ -442,7 +455,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 8,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
 								}
 							],
 							"type": {
@@ -459,14 +473,19 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [49, 48, 50]
+							"children": [
+								49,
+								48,
+								50
+							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/utils/types.ts",
 							"line": 17,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L17"
 						}
 					],
 					"extendedTypes": [
@@ -497,7 +516,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 7,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
 								}
 							],
 							"type": {
@@ -522,7 +542,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 8,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
 								}
 							],
 							"type": {
@@ -539,14 +560,18 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [45, 46]
+							"children": [
+								45,
+								46
+							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/utils/types.ts",
 							"line": 15,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L15"
 						}
 					],
 					"extendedTypes": [
@@ -577,7 +602,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 2,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L2"
 								}
 							],
 							"type": {
@@ -612,7 +638,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 3,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L3"
 								}
 							],
 							"type": {
@@ -639,14 +666,18 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [35, 36]
+							"children": [
+								35,
+								36
+							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/utils/types.ts",
 							"line": 1,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L1"
 						}
 					]
 				},
@@ -669,7 +700,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 7,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
 								}
 							],
 							"type": {
@@ -694,7 +726,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 12,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L12"
 								}
 							],
 							"type": {
@@ -714,7 +747,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 8,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
 								}
 							],
 							"type": {
@@ -731,14 +765,19 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [42, 41, 43]
+							"children": [
+								42,
+								41,
+								43
+							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/utils/types.ts",
 							"line": 11,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L11"
 						}
 					],
 					"extendedTypes": [
@@ -776,7 +815,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 7,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L7"
 								}
 							],
 							"type": {
@@ -796,7 +836,8 @@
 								{
 									"fileName": "src/utils/types.ts",
 									"line": 8,
-									"character": 1
+									"character": 1,
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L8"
 								}
 							],
 							"type": {
@@ -808,14 +849,18 @@
 					"groups": [
 						{
 							"title": "Properties",
-							"children": [38, 39]
+							"children": [
+								38,
+								39
+							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/utils/types.ts",
 							"line": 6,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/types.ts#L6"
 						}
 					],
 					"extendedBy": [
@@ -842,7 +887,7 @@
 							"fileName": "src/utils/absolutePath.ts",
 							"line": 3,
 							"character": 16,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/absolutePath.ts#L3"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/absolutePath.ts#L3"
 						}
 					],
 					"signatures": [
@@ -857,7 +902,7 @@
 									"fileName": "src/utils/absolutePath.ts",
 									"line": 3,
 									"character": 0,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/absolutePath.ts#L3"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/absolutePath.ts#L3"
 								}
 							],
 							"parameters": [
@@ -891,7 +936,7 @@
 							"fileName": "src/utils/config.ts",
 							"line": 10,
 							"character": 16,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L10"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L10"
 						}
 					],
 					"signatures": [
@@ -906,7 +951,7 @@
 									"fileName": "src/utils/config.ts",
 									"line": 10,
 									"character": 0,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/config.ts#L10"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/config.ts#L10"
 								}
 							],
 							"parameters": [
@@ -955,7 +1000,7 @@
 							"fileName": "src/utils/install.ts",
 							"line": 120,
 							"character": 16,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L120"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L120"
 						}
 					],
 					"signatures": [
@@ -989,7 +1034,7 @@
 									"fileName": "src/utils/install.ts",
 									"line": 120,
 									"character": 0,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L120"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L120"
 								}
 							],
 							"parameters": [
@@ -1065,7 +1110,7 @@
 							"fileName": "src/utils/install.ts",
 							"line": 19,
 							"character": 22,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L19"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L19"
 						}
 					],
 					"signatures": [
@@ -1088,7 +1133,7 @@
 									"fileName": "src/utils/install.ts",
 									"line": 19,
 									"character": 0,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L19"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L19"
 								}
 							],
 							"parameters": [
@@ -1163,7 +1208,7 @@
 							"fileName": "src/utils/install.ts",
 							"line": 71,
 							"character": 22,
-							"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L71"
+							"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L71"
 						}
 					],
 					"signatures": [
@@ -1186,7 +1231,7 @@
 									"fileName": "src/utils/install.ts",
 									"line": 71,
 									"character": 0,
-									"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/install.ts#L71"
+									"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/install.ts#L71"
 								}
 							],
 							"parameters": [
@@ -1285,11 +1330,24 @@
 			"groups": [
 				{
 					"title": "Interfaces",
-					"children": [8, 47, 44, 34, 40, 37]
+					"children": [
+						8,
+						47,
+						44,
+						34,
+						40,
+						37
+					]
 				},
 				{
 					"title": "Functions",
-					"children": [19, 4, 31, 22, 26]
+					"children": [
+						19,
+						4,
+						31,
+						22,
+						26
+					]
 				}
 			],
 			"sources": [
@@ -1297,7 +1355,7 @@
 					"fileName": "src/utils/index.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/saqqdy/reinstaller/blob/b7310da/src/utils/index.ts#L1"
+					"url": "https://github.com/saqqdy/reinstaller/blob/7823c14/src/utils/index.ts#L1"
 				}
 			]
 		}
@@ -1305,11 +1363,15 @@
 	"groups": [
 		{
 			"title": "Modules",
-			"children": [1, 2, 3]
+			"children": [
+				1,
+				2,
+				3
+			]
 		}
 	],
 	"packageName": "reinstaller",
-	"packageVersion": "3.0.0-beta.1",
+	"packageVersion": "3.0.0-beta.2",
 	"readme": [
 		{
 			"kind": "text",

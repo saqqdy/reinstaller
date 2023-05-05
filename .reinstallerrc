@@ -2,14 +2,7 @@
 	"packageTags": {
 		"reinstaller": "latest"
 	},
-	"exclude": [
-		"consola",
-		"chalk",
-		"ora",
-		"inquirer",
-        "@types/inquirer",
-        "os-locale"
-	],
+	"exclude": [],
 	"packageManager": "pnpm",
 	"registry": "https://registry.npmmirror.com"
 }
