@@ -73,15 +73,7 @@ const options: RollupOptions = {
 }
 
 function externalCjsEsm(id: string) {
-	return [
-		'core-js',
-		'js-cool',
-		'tslib',
-		'chalk',
-		'commander',
-		'regenerator-runtime',
-		'@babel/runtime'
-	]
+	return ['core-js', 'js-cool', 'chalk', 'commander', 'regenerator-runtime', '@babel/runtime']
 		.concat(externals)
 		.some(k => id === k || new RegExp('^' + k + sep).test(id))
 }

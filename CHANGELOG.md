@@ -1,9 +1,10 @@
 # Change logs
 
-## 2023.06.28 v3.0.1
+## 2023.06.28 v3.0.2
 
 1. fix skip empty sub dir
-2. upgrade packages
+2. fix bugs
+3. upgrade packages
 
 ## 2023.04.27 v3.0.0
 
