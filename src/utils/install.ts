@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { existsSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
 import consola from 'consola'
 import { monorepoRootSync } from 'monorepo-root'
@@ -20,7 +21,9 @@ export async function install(cwd: string = process.cwd(), options: InstallOptio
 	cwd = absolutePath(cwd)
 	const monorepoRoot = monorepoRootSync()
 	const isInMonorepoRoot = monorepoRoot && monorepoRoot === cwd
-	const pkg = readJSONSync(resolve(cwd, 'package.json')) as PackageJSON
+	const pkgJsonPath = resolve(cwd, 'package.json')
+	if (!existsSync(pkgJsonPath)) return
+	const pkg = readJSONSync(pkgJsonPath) as PackageJSON
 	const pkgList = genInstallName(pkg.dependencies || {})
 	const devPkgList = genInstallName(pkg.devDependencies || {})
 	const { name: pm } = (await whatPM(cwd)) || { name: 'npm' }

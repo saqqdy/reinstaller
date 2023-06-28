@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.06.28 v3.0.1
+
+1. fix skip empty sub dir
+2. upgrade packages
+
 ## 2023.04.27 v3.0.0
 
 1. new sub-command `reinstaller install`, run `reinstaller install --help` for help
